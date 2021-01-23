@@ -27,6 +27,11 @@ pipeline {
                 sh 'mvn clean cobertura:cobertura -Dcobertura.report.format=xml'
             }
         }   
+        stage('Package'){
+            steps {
+                sh 'mvn clean install'
+            }
+        }   
     }
 
     post {
