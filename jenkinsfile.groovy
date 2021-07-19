@@ -15,23 +15,7 @@ pipeline {
         stage('compile'){
             steps {
                 sh 'mvn compile'
-            } 
-        }
-        stage('test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
-        stage('cobertura'){
-            steps {
-                sh 'mvn clean cobertura:cobertura -Dcobertura.report.format=xml'
-            }
-        }   
-        stage('Package'){
-            steps {
-                sh 'mvn clean install'
-            }
-        }   
+      
     }
 
     post {
