@@ -22,8 +22,13 @@ pipeline {
                 sh 'mvn test'
             }
         }  
+        stage('cobertura'){
+            steps {
+                sh 'mvn clean cobertura:cobertura -Dcobertura.report.format=xml'
+            }
+        }   
     }
-
+    
     post {
         success {
             archiveArtifacts 'target/*.war'
