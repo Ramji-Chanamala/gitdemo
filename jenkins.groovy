@@ -22,9 +22,9 @@ pipeline {
                 sh 'mvn test'
             }
         }
-        stage('cobertura'){
+        stage('jacoco'){
             steps {
-                sh 'mvn clean cobertura coberturaReportFile: coverage.xml, enableNewApi: true'
+                sh 'mvn clean jacoco:report'
             }
         }   
         stage('Package'){
