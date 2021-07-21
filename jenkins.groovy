@@ -24,7 +24,7 @@ pipeline {
         }
         stage('cobertura'){
             steps {
-                sh 'mvn clean cobertura:cobertura -Dcobertura.report.format=xml'
+                sh 'mvn clean cobertura:cobertura'
             }
         }   
         stage('Package'){
