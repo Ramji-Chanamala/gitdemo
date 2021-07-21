@@ -24,7 +24,7 @@ pipeline {
         }
         stage('cobertura'){
             steps {
-                sh 'mvn clean cobertura:cobertura'
+                sh 'mvn clean cobertura coberturaReportFile: 'coverage.xml', enableNewApi: true'
             }
         }   
         stage('Package'){
