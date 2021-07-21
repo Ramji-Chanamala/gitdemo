@@ -22,9 +22,9 @@ pipeline {
                 sh 'mvn test'
             }
         }
-        stage('jacoco'){
+        stage('cobertura'){
             steps {
-                sh 'mvn clean jacoco:report'
+                sh 'mvn clean cobertura:cobertura'
             }
         }   
         stage('Package'){
